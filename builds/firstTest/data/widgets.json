@@ -1,0 +1,75 @@
+{
+  "hash" : "e7105c43ada45c9f6e0006854ef1a1d95249231d",
+  "plugins" : {
+    "total" : {
+      "statistic" : {
+        "total" : 39,
+        "passed" : 0,
+        "pending" : 0,
+        "canceled" : 22,
+        "failed" : 0,
+        "broken" : 17
+      },
+      "time" : {
+        "start" : 1456125825780,
+        "stop" : 1456125832385,
+        "duration" : 6605
+      }
+    },
+    "defects" : {
+      "totalCount" : 2,
+      "items" : [ {
+        "count" : 16,
+        "uid" : "c6ae41621a8c960f",
+        "message" : "NullPointerException: null",
+        "status" : "BROKEN"
+      }, {
+        "count" : 1,
+        "uid" : "ace3369a634bedd5",
+        "message" : "IOException: Could not start process: <EOF>",
+        "status" : "BROKEN"
+      } ]
+    },
+    "xunit" : {
+      "totalCount" : 2,
+      "items" : [ {
+        "uid" : "eaebaacd203421af",
+        "title" : "ControllerTest : Command line test b39c3c74-7193-457b-806e-b72e9d86fd49",
+        "statistic" : {
+          "total" : 25,
+          "passed" : 0,
+          "pending" : 0,
+          "canceled" : 22,
+          "failed" : 0,
+          "broken" : 3
+        }
+      }, {
+        "uid" : "797e636e97018b00",
+        "title" : "ModelTest : Command line test 3d29451f-2f43-4380-a5ce-5ada85b3cf35",
+        "statistic" : {
+          "total" : 14,
+          "passed" : 0,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 14
+        }
+      } ]
+    },
+    "behaviors" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "title" : "Without feature",
+        "statistic" : {
+          "total" : 39,
+          "passed" : 0,
+          "pending" : 0,
+          "canceled" : 22,
+          "failed" : 0,
+          "broken" : 17
+        }
+      } ]
+    },
+    "environment" : [ ]
+  }
+}
