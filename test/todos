@@ -1,0 +1,13 @@
+TODO: Switch JPA tests to EmbedMongo to test database connection
+TODO: Test Shivawu plugins to use maven test plugin
+TODO: add task to rename and move report file for DOckerHub
+TODO: Update list with websocket
+
+References
+https://github.com/yohanliyanage/blog-mongo-integration-tests
+http://www.programcreek.com/java-api-examples/index.php?api=de.flapdoodle.embed.mongo.config.Net
+https://github.com/shivawu/sbt-maven-plugin
+https://github.com/allure-framework/allure-core
+
+https://orrsella.com/2014/02/25/integrating-play-framework-and-maven/
+http://mvnrepository.com/artifact/com.typesafe.play?p=2

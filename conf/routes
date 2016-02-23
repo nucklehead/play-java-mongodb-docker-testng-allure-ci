@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.TaskController.index()
+
+# Routes API Rest
+GET     /tasks                  controllers.TaskController.list(page: Integer ?= 1, size: Integer ?= 3)
+GET     /taskSocket             controllers.TaskController.socket()
+GET     /tasks/$id<[0-9]+>      controllers.TaskController.get(id: Integer)
+POST    /tasks                  controllers.TaskController.create()
+PUT     /tasks                  controllers.TaskController.update()
+PATCH   /tasks                  controllers.TaskController.update()
+DELETE  /tasks/$id<[0-9]+>      controllers.TaskController.delete(id: Integer)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Wash car",
+    "description": "Scrub it well",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "name": "Write tests",
+    "description": "This is for your play-java project",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "name": "Push the code to repo",
+    "description": "just commit the changes and run git push",
+    "status": "completed"
+  },
+  {
+    "id": 4,
+    "name": "Test with reporting and docker",
+    "description": "You need to update the dockerfile to reflect project name and push to repo to start build and ake sure allure report is created as expected",
+    "status": "pending"
+  }
+]

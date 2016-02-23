@@ -1,0 +1,40 @@
+@(message: String)
+
+@main(message) {
+    <h1>@message</h1>
+
+
+<form id="myForm">
+    <div class="form-group">
+        <label for="taskName">Task Name</label>
+        <input type="text" class="form-control" id="taskName" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="taskDescription">Description</label>
+        <textarea class="form-control" rows="5" id="taskDescription" placeholder="Description"></textarea>
+    </div>
+    <button type="button" class="btn btn-default" onclick="sendTask()">Add</button>
+</form>
+
+    <ul class="list-group" id="taskList">
+        <li class="list-group-item">
+            <span class="badge">Pending</span>
+            <h4 class="list-group-item-heading">
+                <span class="glyphicon glyphicon-tags"></span>
+                Cras justo odio
+            </h4>
+            <p class="list-group-item-text">Description</p>
+        </li>
+        @for(task <- TaskController.listTasks()) {
+            <li class="list-group-item">
+                <span class="badge">@task.status</span>
+                <h4 class="list-group-item-heading">
+                    <span class="glyphicon glyphicon-tags"></span>
+                    @task.name
+                </h4>
+                <p class="list-group-item-text">@task.description</p>
+            </li>
+        }
+    </ul>
+
+}
