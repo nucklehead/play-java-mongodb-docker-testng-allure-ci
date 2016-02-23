@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="builds-app">
+  <head>
+    <meta charset="UTF-8">
+    <title>Play-java-mongodb-docker-testng-allure-ci by nucklehead</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/gh3/gh3.min.js"></script>
+    <script src="js/controller.js"></script>
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Play-java-mongodb-docker-testng-allure-ci</h1>
+      <h2 class="project-tagline">This is a template project to setup a CI environment using docker testng and allure</h2>
+      <a href="index.html" class="btn">Home</a>
+      <a href="https://github.com/nucklehead/play-java-mongodb-docker-testng-allure-ci" class="btn">View on GitHub</a>
+      <a href="https://github.com/nucklehead/play-java-mongodb-docker-testng-allure-ci/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nucklehead/play-java-mongodb-docker-testng-allure-ci/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="builds.html" class="btn">Builds</a>
+    </section>
+
+    <!--<section class="main-content">-->
+      <!--<nav class="navbar navbar-default navbar-fixed-top">-->
+        <!--<h1>Builds</h1>-->
+      <!--</nav>-->
+    <div class="row" ng-controller="buildsCtrl">
+      <div class="col-xs-2 col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li ng-repeat="build in builds" ng-class="{active: $index===selectedIndex}"><a class="row" ng-click="showResults(build, $index)"><span class="btn btn-info col-xs-4 col-md-4" type="button">Artifact</span><span class="col-xs-6 col-md-6 text-center">{{build.name}}</span></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-10 col-md-10">
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe ng-src="{{buildUrl}}" id="resultsView" class="embed-responsive-item"></iframe>
+        </div>
+      </div>
+      </div>
+
+    <!--</section>-->
+
+  
+  </body>
+</html>
