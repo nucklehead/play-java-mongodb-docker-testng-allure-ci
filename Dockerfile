@@ -4,10 +4,10 @@ COPY . /data
 
 WORKDIR /data
 
-RUN yum install -y tar openssl
+RUN yum install -y tar openssl mvn
+
+RUN mvn clean test site
 
 RUN activator universal:package-xz-tarball
-
-#RUN ./upload target/universal/play-java-mongodb-docker-testng-allure-ci-1.1.txz
 
 RUN rm -rf *
