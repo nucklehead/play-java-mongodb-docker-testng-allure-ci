@@ -22,10 +22,10 @@ RUN buildDate=`date +"%m-%d-%y-%H:%M:%S"` && \
 RUN git fetch && git checkout gh-pages
 RUn git pull && \
     mv /tmp/$buildDate builds/$buildDate && \
-    git add -A && git commit -m "CI build form $buildDate" && git push
+    git add builds/$buildDate && git commit -m "CI build from $buildDate"
 
 
-RUN activator universal:package-xz-tarball
+#RUN activator universal:package-xz-tarball
 
 
-RUN rm -rf *
+#RUN rm -rf *
