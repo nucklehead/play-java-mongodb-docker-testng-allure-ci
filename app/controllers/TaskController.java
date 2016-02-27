@@ -38,7 +38,7 @@ public class TaskController extends Controller {
      *
      * @return Result
      */
-    public static Result index() {
+    public Result index() {
         return ok(index.render("API REST for JAVA Play Framework"));
     }
 
@@ -50,7 +50,7 @@ public class TaskController extends Controller {
      *
      * @return Result
      */
-    public static Result list(Integer page, Integer size) {
+    public Result list(Integer page, Integer size) {
         List models = TaskService.paginate(page-1, size);
         Long count = TaskService.count();
 
@@ -83,7 +83,7 @@ public class TaskController extends Controller {
      *
      * @return Result
      */
-    public static Result get(Integer id) {
+    public Result get(Integer id) {
         Task task = TaskService.find(id);
         if (task == null ) {
             ObjectNode result = Json.newObject();
@@ -98,7 +98,7 @@ public class TaskController extends Controller {
      *
      * @return Result
      */
-    public static Result create() {
+    public Result create() {
         Form<Task> task = taskForm.bindFromRequest();
         if (task.hasErrors()) {
             return jsonResult(badRequest(task.errorsAsJson()));
@@ -112,7 +112,7 @@ public class TaskController extends Controller {
      *
      * @return Result
      */
-    public static Result update() {
+    public Result update() {
         Form<Task> task = taskForm.bindFromRequest();
         if (task.hasErrors()) {
             return jsonResult(badRequest(task.errorsAsJson()));
@@ -128,7 +128,7 @@ public class TaskController extends Controller {
      *
      * @return Result
      */
-    public static Result delete(Integer id) {
+    public Result delete(Integer id) {
         if (TaskService.delete(id)) {
             ObjectNode result = Json.newObject();
             result.put("msg", "Deleted " + id);
@@ -139,7 +139,7 @@ public class TaskController extends Controller {
         return jsonResult(notFound(result));
     }
 
-    public static WebSocket<JsonNode> socket() {
+    public WebSocket<JsonNode> socket() {
         return WebSocket.withActor(MyWebSocketActor::props);
     }
 }

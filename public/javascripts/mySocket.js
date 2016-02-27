@@ -3,16 +3,16 @@ $(function() {
     var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket;
     var taskSocket = new WS("ws://localhost:9000/taskSocket")
 
-    var form = document.getElementById('myForm');
-    var taskName = document.getElementById('taskName');
-    var taskDescription = document.getElementById('taskDescription');
-    var taskList = document.getElementById('taskList');
+    var form = $('#myForm');
+    var taskName = $('#taskName');
+    var taskDescription = $('#taskDescription');
+    var taskList = $('#taskList');
 
     sendTask = function() {
         taskSocket.send(JSON.stringify(
             {
-                name: taskName.value,
-                description: taskDescription.value
+                name: taskName.val(),
+                description: taskDescription.val()
             })
         );
     }
@@ -36,7 +36,7 @@ $(function() {
                      '</li>')
         // Create the message element
         $("span", el).text(data.status)
-        $("h4", el).text(data.name)
+        $("h4", el).append(data.name)
         $("p", el).text(data.description)
         taskList.append(el)
 
